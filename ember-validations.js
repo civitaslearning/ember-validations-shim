@@ -226,7 +226,7 @@ Ember.Validations.validators.Base = Ember.Object.extend({
       return model.get(key);
     }
   },
-  isValid: Ember.computed.empty('errors.[]'),
+  isValid: Ember.computed.empty('errors.[]').volatile(),
   validate: function() {
     var self = this;
     return this._validate().then(function(success) {
